@@ -43,7 +43,7 @@ class AcessoToken: NSObject,WKNavigationDelegate {
     func pegarCodigo(){
         let responseType = "code"
         let redirectUri = URL(string: "https://api.ufrn.br")!
-        let url = URL(string: "https://apitestes.info.ufrn.br/authz-server/oauth/authorize?client_id=\(clientId)&response_type=\(responseType)&redirect_uri=\(redirectUri)")!
+        let url = URL(string: "https://autenticacao-sustentacao.info.ufrn.br/authz-server/oauth/authorize?client_id=\(clientId)&response_type=\(responseType)&redirect_uri=\(redirectUri)")!
         let request = URLRequest(url: url)
         webView.navigationDelegate = self
         webView.load(request)
@@ -52,7 +52,7 @@ class AcessoToken: NSObject,WKNavigationDelegate {
     func pegarToken(comCodigo codigo:String){
         let redirectUri = URL(string: "https://api.ufrn.br")!
         let grantType = "authorization_code"
-        let url = URL(string: "https://apitestes.info.ufrn.br/authz-server/oauth/token?client_id=\(clientId)&client_secret=\(clientSecret)&redirect_uri=\(redirectUri)&grant_type=\(grantType)&code=\(codigo)")
+        let url = URL(string: "https://autenticacao-sustentacao.info.ufrn.br/authz-server/oauth/token?client_id=\(clientId)&client_secret=\(clientSecret)&redirect_uri=\(redirectUri)&grant_type=\(grantType)&code=\(codigo)")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         let session = URLSession.shared
