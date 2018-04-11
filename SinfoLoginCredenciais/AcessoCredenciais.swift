@@ -25,7 +25,7 @@ class AcessoCredenciais {
     }
     
     func requisitarCredenciais(){
-        let request = NSMutableURLRequest(url: NSURL(string: "https://apitestes.info.ufrn.br/authz-server/oauth/token?client_id=\(clientId)&client_secret=\(clientSecret)&grant_type=client_credentials")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://autenticacao-sustentacao.info.ufrn.br/authz-server/oauth/token?client_id=\(clientId)&client_secret=\(clientSecret)&grant_type=client_credentials")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         
